@@ -1,0 +1,39 @@
+.question {
+  border: 1px solid #333;
+  padding: 200px 0;
+  margin: auto;
+  text-align: center;
+  width: 600px;
+  height: 200px;
+  font-size: 6em;
+  font-weight: bold;
+  color: #333;
+}
+
+.score {
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
