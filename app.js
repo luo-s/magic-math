@@ -13,10 +13,12 @@ let streakCount = 0;
 let scoreCount = 0;
 
 function getRandomQuiz() {
-  n1 = Math.floor(Math.random() * (999 - 100) + 100);
-  n2 = Math.floor(Math.random() * (999 - 100) + 100);
-  op = "+";
-  result = n1 + n2;
+  n1 = Math.floor(Math.random() * (12 - 2) + 2);
+  if (n1 == 10) n1 = 9;
+  n2 = Math.floor(Math.random() * (12 - 2) + 2);
+  if (n2 == 10) n2 = 9;
+  op = "x";
+  result = n1 * n2;
   console.log(result);
   num1.innerText = n1;
   num2.innerText = `${n2} = `;
@@ -29,17 +31,19 @@ function compare(event) {
   event.preventDefault();
   let input = document.getElementById("input").value;
   console.log(input);
-  if (input == result) {
-    scoreCount += 2;
-    streakCount += 1;
-    getRandomQuiz();
-  } else {
-    scoreCount -= 1;
-    streakCount = 0;
-    streak.innerText = streakCount;
-    score.innerText = scoreCount;
+  if (input !== "") {
+    if (input == result) {
+      scoreCount += 2;
+      streakCount += 1;
+      getRandomQuiz();
+    } else {
+      scoreCount -= 1;
+      streakCount = 0;
+      streak.innerText = streakCount;
+      score.innerText = scoreCount;
+    }
+    inputElement.value = "";
   }
-  inputElement.value = "";
 }
 
 getRandomQuiz();
